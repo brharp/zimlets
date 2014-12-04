@@ -1,0 +1,23 @@
+<project name="ca_uoguelph_ccs_sidebar" default="dist" basedir=".">
+
+    <description>
+        Zimlet build file.
+    </description>
+
+  <property name="zimlet_source_path" location="src/main/zimlet"/>
+  <property name="dist_path"          location="dist"/>
+
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${dist_path}"/>
+  </target>
+
+  <target name="dist" depends="init">
+    <zip zipfile="${dist_path}/${ant.project.name}.zip" basedir="${zimlet_source_path}" />
+  </target>
+
+  <target name="clean">
+    <delete dir="${dist_dir}"/>
+  </target>
+</project>
+
